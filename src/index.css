@@ -6,6 +6,43 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --page-dark: rgb(26, 26, 26);
+  --page-light: white;
+  --page-navy: rgb(35, 35, 119);
 }
 
+html {
+  font-size: 62.5%;
+}
 
+/* Nav */ 
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 2rem;
+}
+
+.nav-button {
+  cursor: pointer;
+}
+
+/* Hero */
+
+.hero-title {
+  font-size: 4.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-subtitle {
+  padding: 0;
+  margin: 0;
+}
+
+.hero-shop-now {
+  text-decoration: none;
+}
