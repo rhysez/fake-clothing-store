@@ -1,6 +1,11 @@
+import Nav from './Nav'
+
 function Shop() {
     return (
-        <h1>This is the Shop page</h1>
+        <>
+            <Nav></Nav>
+            <h1 style={{marginTop: '100px'}}>This is the Shop page</h1>
+        </>
     )
 }
 

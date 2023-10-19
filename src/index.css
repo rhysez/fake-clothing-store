@@ -43,8 +43,7 @@ body {
 }
 
 .nav-container:hover {
-  background-color: var(--page-dark);
-  color: var(--page-light);
+  background: none;
 }
 
 .nav-title {
@@ -72,6 +71,8 @@ body {
 .nav-button {
   cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
+  color: var(--page-dark);
 }
 
 @media (max-width: 900px) {
@@ -86,7 +87,7 @@ body {
   background-image: url('/public/hero.jpg');
   background-size: 100% 100%; 
   background-repeat: no-repeat;
-  height: 750px;
+  height: 900px;
 
   display: flex;
   justify-content: flex-end;
