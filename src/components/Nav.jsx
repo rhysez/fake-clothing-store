@@ -11,7 +11,7 @@ function Nav() {
                 <ul className='nav-list'>
                     {navListMapped}
                 </ul>
-                <h2>CART</h2>
+                <h2 className='shopping-cart'>CART</h2>
             </div>
         </>
     )

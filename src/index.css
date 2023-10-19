@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -8,6 +8,7 @@
   -webkit-text-size-adjust: 100%;
 
   --page-dark: rgb(26, 26, 26);
+  --button-dark: rgb(50, 50, 50);
   --page-grey: rgb(158, 158, 158, 0.5);
   --page-light: white;
   --page-navy: rgb(35, 35, 119);
@@ -18,19 +19,39 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Nav */ 
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px var(--page-grey);
   margin: 0;
   padding: 0;
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  background-color: var(--page-light);
+
+  transition: all ease-in-out 0.2s;
+}
+
+.nav-container:hover {
+  background-color: var(--page-dark);
+  color: var(--page-light);
 }
 
 .nav-title {
   font-size: 3rem;
+  padding-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .nav-list {
@@ -39,11 +60,85 @@ html {
   gap: 2rem;
   list-style: none;
   font-size: 2rem;
+  padding-left: 0;
+}
+
+.shopping-cart {
+  padding-right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 .nav-button {
   cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .nav-list {
+    gap: 1rem;
+  }
 }
 
 /* Hero */
 
+.hero-container {
+  background-image: url('/public/hero.jpg');
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  height: 750px;
+
+  display: flex;
+  justify-content: flex-end;
+
+  color: var(--page-light);
+}
+
+
+.hero-content-1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20rem;
+  margin-right: 4rem;
+  gap: 1.25rem;
+}
+
+.hero-title, .hero-subtitle {
+  margin: 0;
+  text-align: right;
+}
+
+.hero-title {
+  font-size: 5rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+}
+
+.shop-now {
+  color: var(--page-light);
+  border: none;
+  border-radius: 10px;
+  font-size: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: var(--button-dark);
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .hero-container {
+    justify-content: center;
+  }
+  .hero-content-1 {
+    align-items: center;
+    margin-right: 0;
+  }
+  .hero-title, .hero-subtitle {
+    text-align: center;
+  }
+}
