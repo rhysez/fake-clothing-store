@@ -6,9 +6,13 @@ function Nav() {
 
     return (
         <>
-            <ul className='nav-list'>
-                {navListMapped}
-            </ul>
+            <div className='nav-container'>
+                <h3 className='nav-title'><strong>FRESH</strong></h3>
+                <ul className='nav-list'>
+                    {navListMapped}
+                </ul>
+                <h2>CART</h2>
+            </div>
         </>
     )
 }

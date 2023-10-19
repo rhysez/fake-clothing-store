@@ -8,8 +8,10 @@
   -webkit-text-size-adjust: 100%;
 
   --page-dark: rgb(26, 26, 26);
+  --page-grey: rgb(158, 158, 158, 0.5);
   --page-light: white;
   --page-navy: rgb(35, 35, 119);
+  
 }
 
 html {
@@ -17,6 +19,19 @@ html {
 }
 
 /* Nav */ 
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px var(--page-grey);
+  margin: 0;
+  padding: 0;
+}
+
+.nav-title {
+  font-size: 3rem;
+}
 
 .nav-list {
   display: flex;
@@ -32,17 +47,3 @@ html {
 
 /* Hero */
 
-.hero-title {
-  font-size: 4.5rem;
-  padding: 0;
-  margin: 0;
-}
-
-.hero-subtitle {
-  padding: 0;
-  margin: 0;
-}
-
-.hero-shop-now {
-  text-decoration: none;
-}
