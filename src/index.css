@@ -90,7 +90,8 @@ body {
 }
 
 .hero-image {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .hero-title, .hero-subtitle {
@@ -100,24 +101,24 @@ body {
 }
 
 .hero-title {
-  top: 25%;
-  font-size: 7.5rem;
+  top: 10vw;
+  font-size: 4vw;
   position: absolute;
 }
 
 .hero-subtitle {
-  top: 45%;
-  font-size: 4rem;
+  top: 20vw;
+  font-size: 2vw;
   position: absolute;
 }
 
 .shop-now {
   position: absolute;
-  top: 55%;
+  top: 25vw;
   color: var(--page-light);
   border: none;
   border-radius: 10px;
-  font-size: 2.5rem;
+  font-size: 1.5vw;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
@@ -131,11 +132,23 @@ body {
   .hero-container {
     justify-content: center;
   }
-  .hero-content-1 {
-    align-items: center;
-    margin-right: 0;
-  }
-  .hero-title, .hero-subtitle {
+  
+  .hero-title, .hero-subtitle, .shop-now {
     text-align: center;
+  }
+
+  .hero-title {
+    top: 25vw;
+    font-size: 8vw;
+  }
+
+  .hero-subtitle {
+    top: 45vw;
+    font-size: 4vw;
+  }
+
+  .shop-now {
+    top: 55vw;
+    font-size: 3vw;
   }
 }
