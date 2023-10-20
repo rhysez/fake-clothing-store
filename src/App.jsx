@@ -14,11 +14,12 @@ function emptyCart(){
     <>
       <Nav />
       <div className='hero-container'>
-        <div className='hero-content-1'>
+      <img src="/public/hero.jpg" alt="woman in sports clothing looking out into the distance" className='hero-image'/>
+        
           <h2 className='hero-title'>INTRODUCING ACTIVE <br /> WEAR WITH STYLE</h2>
           <h4 className='hero-subtitle'>The classic with a twist.</h4>
           <button className='shop-now'>Shop</button>
-        </div>
+        
       </div>
     </>
   )

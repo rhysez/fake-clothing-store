@@ -84,49 +84,45 @@ body {
 /* Hero */
 
 .hero-container {
-  background-image: url('/public/hero.jpg');
-  background-size: 100% 100%; 
-  background-repeat: no-repeat;
-  height: 900px;
-
   display: flex;
   justify-content: flex-end;
-
   color: var(--page-light);
 }
 
-
-.hero-content-1 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-top: 20rem;
-  margin-right: 4rem;
-  gap: 1.25rem;
+.hero-image {
+  width: 100%;
 }
 
 .hero-title, .hero-subtitle {
   margin: 0;
+  margin-right: 5%;
   text-align: right;
 }
 
 .hero-title {
-  font-size: 5rem;
+  top: 25%;
+  font-size: 7.5rem;
+  position: absolute;
 }
 
 .hero-subtitle {
-  font-size: 2rem;
+  top: 45%;
+  font-size: 4rem;
+  position: absolute;
 }
 
 .shop-now {
+  position: absolute;
+  top: 55%;
   color: var(--page-light);
   border: none;
   border-radius: 10px;
-  font-size: 2rem;
+  font-size: 2.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  margin-right: 5%;
   background-color: var(--button-dark);
   cursor: pointer;
 }
