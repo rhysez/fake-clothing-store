@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Shoes from "./components/additional/Shoes";
 import MatchingGymSets from "./components/additional/MatchingGymSets";
 import Category from "./components/additional/Category";
+import Footer from "./components/additional/Footer";
 
 function App() {
   // this state is to be passed down to components via props
@@ -63,6 +64,8 @@ function App() {
           text="Accessories"
         />
       </div>
+      
+      <Footer />
     </>
   );
 }

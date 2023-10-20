@@ -1,7 +1,7 @@
 :root {
-  font-family: Roboto, Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  font-synthesis: none;
+  font-family: Roboto, 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,6 +15,9 @@
   
   --matching-gym-sets-background: #8BAEC412;
   --matching-gym-sets-shadow: #444633;
+
+  --footer-background: #262945;
+  --footer-text: #AAAAAA;
 }
 
 html {
@@ -46,7 +49,7 @@ body {
 
 .nav-title {
   font-size: 3rem;
-  padding-left: 1rem;
+  padding-left: 4rem;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -54,14 +57,14 @@ body {
 .nav-list {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
   list-style: none;
   font-size: 2rem;
   padding-left: 0;
 }
 
 .shopping-cart {
-  padding-right: 1rem;
+  padding-right: 4rem;
   font-size: 2rem;
   cursor: pointer;
 }
@@ -111,10 +114,11 @@ body {
 }
 
 .hero-subtitle {
+  font-family: 'Nunito', Roboto, Inter, sans-serif;
+  font-weight: 400;
   top: 20vw;
   font-size: 2vw;
   position: absolute;
-  font-family: Nunito, Roboto, system-ui, sans-serif;
 }
 
 .shop-now {
@@ -253,13 +257,13 @@ body {
 }
 
 .matching-sets-subtitle {
-  font-family: Nunito, Roboto, Inter, sans-serif;
+  font-family: 'Nunito', Roboto, Inter, sans-serif;
   font-size: 2vw;
   text-align: right;
 }
 
 .matching-sets-shop {
-  font-family: Nunito, Roboto, Inter, sans-serif;
+  font-family: 'Nunito', Roboto, Inter, sans-serif;
   font-weight: 600;
   font-size: 1.5vw;
   color: var(--page-dark);
@@ -351,5 +355,14 @@ body {
 
   .category-text {
     font-size: 4vw;
+  }
+}
+
+/* Footer */
+/* Most of CSS for Footer has been done directly inside React */
+
+@media (max-width: 900px) {
+  .footer-title {
+    font-size: 5vw;
   }
 }
