@@ -44,10 +44,6 @@ body {
   transition: all ease-in-out 0.2s;
 }
 
-.nav-container:hover {
-  background: none;
-}
-
 .nav-title {
   font-size: 3rem;
   padding-left: 1rem;
@@ -99,6 +95,7 @@ body {
 .hero-image {
   max-width: 100%;
   height: auto;
+  filter: saturate(60%);
 }
 
 .hero-title, .hero-subtitle {
@@ -117,19 +114,20 @@ body {
   top: 20vw;
   font-size: 2vw;
   position: absolute;
+  font-family: Nunito, Roboto, system-ui, sans-serif;
 }
 
 .shop-now {
   position: absolute;
   top: 24vw;
   color: var(--page-light);
-  box-shadow: 1px 1px 30px 1px var(--page-light);
-  border-radius: 10px;
+  box-shadow: 1px 1px 30px 1px rgba(255, 255, 255, 0.49);
+  border-radius: 30px;
   font-size: 1.5vw;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin-right: 5%;
   background-color: var(--button-dark);
   cursor: pointer;
@@ -209,7 +207,10 @@ body {
     grid-template-rows: repeat(3, 1fr);
   }
   .shoes-text {
-    font-size: 2vw;
+    font-size: 3.5vw;
+  }
+  .new-in-title {
+    font-size: 5vw;
   }
 }
 
@@ -217,9 +218,6 @@ body {
   .new-in-items {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(5, 1fr);
-  }
-  .new-in-title {
-    font-size: 4vw;
   }
   .shoes-text {
     font-size: 3vw;
@@ -234,7 +232,8 @@ body {
   align-items: center;
   padding-top: 10rem;
   padding-bottom: 10rem;
-  gap: 2rem;
+  gap: 4rem;
+  margin-top: 7.5rem;
 }
 
 .matching-sets-image {
@@ -272,6 +271,12 @@ body {
   padding-left: 2rem;
   border: solid 2px var(--page-dark);
   border-radius: 30px;
+  transition: all ease-in-out 0.2s;
+}
+
+.matching-sets-shop:hover {
+  background-color: var(--matching-gym-sets-shadow);
+  color: var(--page-light);
 }
 
 @media (max-width: 900px) {
@@ -280,6 +285,9 @@ body {
   }
   .matching-sets-text {
     justify-content: flex-start;
+  }
+  .matching-sets-image {
+    max-width: 30rem;
   }
 }
 
@@ -292,5 +300,56 @@ body {
   }
   .matching-sets-shop {
     font-size: 3vw;
+  }
+}
+
+/* Categories */
+
+.categories-title {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+.categories-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+
+.category-image {
+  max-width: 40rem;
+  height: 50rem;
+}
+
+.category-text {
+  text-align: center;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+
+@media (max-width: 1100px) {
+  .categories-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .categories-container {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .categories-title {
+    font-size: 5vw;
+  }
+
+  .category-text {
+    font-size: 4vw;
   }
 }
