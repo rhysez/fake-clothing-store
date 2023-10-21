@@ -66,6 +66,9 @@ body {
 .shopping-cart {
   padding-right: 4rem;
   font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--page-dark);
   cursor: pointer;
 }
 

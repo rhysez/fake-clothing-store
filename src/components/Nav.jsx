@@ -11,7 +11,7 @@ function Nav() {
                     <Link to='/shop' className='nav-button' key={2}>Shop</Link>
                     <Link to='/sale' className='nav-button' key={3}>Sale</Link>
                 </ul>
-                <h2 className='shopping-cart'>CART</h2>
+                <Link to='/cart' className='shopping-cart'>CART</Link>
             </div>
         </>
     )
