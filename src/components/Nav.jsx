@@ -9,7 +9,6 @@ function Nav() {
                 <ul className='nav-list'>
                     <Link to='/' className='nav-button' key={1}>Home</Link>
                     <Link to='/shop' className='nav-button' key={2}>Shop</Link>
-                    <Link to='/sale' className='nav-button' key={3}>Sale</Link>
                 </ul>
                 <Link to='/cart' className='shopping-cart'>CART</Link>
             </div>

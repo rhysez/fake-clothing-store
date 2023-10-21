@@ -8,10 +8,15 @@ import Footer from "./components/additional/Footer";
 
 function App() {
   // this state is to be passed down to components via props
+  // which component should this be in...? 
   const [itemsInCart, setItemsInCart] = useState([]);
 
   function emptyCart() {
     setItemsInCart([]);
+  }
+
+  function addToCart(item) {
+    setItemsInCart([...itemsInCart, item])
   }
 
   return (
