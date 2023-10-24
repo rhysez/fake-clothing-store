@@ -20,7 +20,7 @@ function ShoppingCart(props) {
           className='cart-container'
           style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <ul style={{ fontSize: '2rem' }}>{props.cartList}</ul>
+          <ul style={{ fontSize: '2rem', paddingLeft: '0' }}>{props.cartList}</ul>
         </div>
         <p style={{ fontSize: '2rem' }}>Your Total: £{sumAllItems()}</p>
         <button
