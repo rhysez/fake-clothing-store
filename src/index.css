@@ -424,7 +424,6 @@ body {
 }
 
 .checkout {
-  margin-top: 10%;
   color: var(--page-light);
   background-color: var(--matching-gym-sets-shadow);
   border-radius: 10px;
@@ -439,7 +438,6 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
-  margin-top: 15%;
 }
 
 .item-notification {
@@ -468,7 +466,13 @@ body {
 
 .item-inputs {
   display: flex;
+  justify-content: center;
   gap: 1rem;
+}
+
+input {
+  border-radius: 10px;
+  border: solid 2px var(--page-dark);
 }
 
 .add-to-cart {
@@ -505,6 +509,10 @@ body {
 .cart-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
+  background-color: var(--matching-gym-sets-background);
+  padding: 1rem;
+  border-radius: 10px;
 }

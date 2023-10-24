@@ -1,4 +1,4 @@
-import { createBrowserRouter, Link, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import App from '../App.jsx';
 import Shop from './Shop.jsx';
@@ -10,27 +10,34 @@ const Router = () => {
   const [itemData, setItemData] = useState([]);
   const [itemsInCart, setItemsInCart] = useState([]);
 
-  function itemNotification(message) {
+  function handleItemNotification(message) {
     const itemNotification = document.querySelector('.item-notification');
     itemNotification.textContent = message
     itemNotification.style.display = 'inline';
     setTimeout(() => {
       itemNotification.style.display = 'none';
-    }, '1000');
+    }, '2000');
   }
 
-  function emptyCart() {
-    setItemsInCart([]);
-  }
-
-  function addToCart(item) {
+  function handleAddToCart(item) {
+    event.preventDefault()
     setItemsInCart([...itemsInCart, item]);
-    itemNotification('Item added to cart')
+    handleItemNotification('Item added to cart')
   }
 
-  function submitOrder(){
+  function handleSubmitOrder(cart){
+    if (!cart.length) {
+      handleItemNotification('Cart is empty')
+      return
+    }
     setItemsInCart([])
-    itemNotification('Thanks for your order!')
+    handleItemNotification('Thanks for your order!')
+  }
+
+  function handleDeleteItem(e) {
+    const name = e.target.getAttribute('name')
+    setItemsInCart(itemsInCart.filter(item => item.title !== name));
+    handleItemNotification('Item removed from cart')
   }
 
   useEffect(() => {
@@ -79,7 +86,7 @@ const Router = () => {
                 title={item.title}
                 price={item.price}
                 addToCart={() => {
-                  addToCart({ image: item.image, title: item.title });
+                  handleAddToCart({ image: item.image, title: item.title });
                 }}
               />
             );
@@ -91,18 +98,21 @@ const Router = () => {
       path: '/cart',
       element: (
         <ShoppingCart
-          submitOrder={submitOrder}
+          submitOrder={() => {handleSubmitOrder(itemsInCart)}}
           cartQuantity={itemsInCart.length}
           cartList={itemsInCart.map((item, index) => {
             return (
-              <div className='cart-item'>
+              <>
+                <div className='cart-item' key={index} >
                 <img
                   style={{ width: '4vw' }}
                   src={item.image}
                   alt={item.title}
                 />
                 {item.title}
-              </div>
+                <button onClick={handleDeleteItem} name={item.title} className='add-to-cart'>Delete</button>
+                </div>
+              </>
             );
           })}
         />
