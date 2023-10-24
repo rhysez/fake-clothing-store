@@ -1,8 +1,7 @@
-# React + Vite
+# FRESH - A fake clothing store with a function shopping cart, build with ReactJS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project was built to get a better grasp of react-router. The project contains three pages: Home, Shop and Cart. 
+The user can browse shop items, specify an item quantity and then add those items into their cart. 
+The cart page will display a list of items the user has added, as well as options to delete those items from the cart, and the total price.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This UX/UI of this project was designed by Deanna Brimson. 
