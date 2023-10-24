@@ -12,7 +12,7 @@ function App(props) {
       <Nav cartQuantity={props.cartQuantity} />
       <div className='hero-container'>
         <img
-          src='public/hero.jpg'
+          src='./public/hero.jpg'
           alt='woman in sports clothing looking out into the distance'
           className='hero-image'
         />
