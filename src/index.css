@@ -390,12 +390,7 @@ body {
 }
 
 .item {
-  cursor: pointer;
   border-radius: 20px;
-}
-
-.item:hover {
-  transform: scale(1.025);
 }
 
 .hero-image {

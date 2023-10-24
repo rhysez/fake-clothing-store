@@ -22,10 +22,10 @@ function Item(props) {
       >
         {itemObject.title}
       </p>
-      <p className='item-price' style={{ fontSize: '1.5rem', fontWeight: '500', textAlign: 'center' }}>{itemObject.price}</p>
+      <p className='item-price' style={{ fontSize: '1.5rem', fontWeight: '500', textAlign: 'center' }}>£{itemObject.price}</p>
       <div className='item-inputs'>
         <input type="number" style={{width: '25%'}} />
-        <button type="submit" className='add-to-cart' onClick={props.addToCart}>Add to cart</button>
+        <button type="submit" className='add-to-cart' id='add-to-cart' onClick={() => {props.addToCart()}}>Add to cart</button>
       </div>
     </div>
   );

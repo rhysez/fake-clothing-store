@@ -1,8 +1,16 @@
 import Nav from "./Nav";
-import { useLocation } from 'react-router-dom'
 
 function ShoppingCart(props) {
-  
+
+  function sumAllItems() {
+    if (!props.cartItems.length) return 0
+    const initialValue = 0
+    const itemTotal = props.cartItems.reduce((accumulator, object) => {
+      return accumulator + object.price
+    }, 0)
+
+    return itemTotal
+  }
 
   return (
     <>
@@ -20,6 +28,7 @@ function ShoppingCart(props) {
           {props.cartList}
           </ul>
         </div>
+        <p style={{fontSize: '2rem'}}>Your Total: £{sumAllItems()}</p>
         <button className='checkout' onClick={props.submitOrder}>Checkout</button>
       </div>
     </>

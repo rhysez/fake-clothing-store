@@ -21,7 +21,7 @@ const Router = () => {
 
   function handleAddToCart(item) {
     event.preventDefault()
-    setItemsInCart([...itemsInCart, item]);
+    setItemsInCart([...itemsInCart, item]);  
     handleItemNotification('Item added to cart')
   }
 
@@ -86,7 +86,7 @@ const Router = () => {
                 title={item.title}
                 price={item.price}
                 addToCart={() => {
-                  handleAddToCart({ image: item.image, title: item.title });
+                  handleAddToCart({ image: item.image, title: item.title, price: item.price });
                 }}
               />
             );
@@ -99,11 +99,12 @@ const Router = () => {
       element: (
         <ShoppingCart
           submitOrder={() => {handleSubmitOrder(itemsInCart)}}
+          cartItems={itemsInCart}
           cartQuantity={itemsInCart.length}
           cartList={itemsInCart.map((item, index) => {
             return (
               <>
-                <div className='cart-item' key={index} >
+                <div className='cart-item' key={'cartItem' + index} >
                 <img
                   style={{ width: '4vw' }}
                   src={item.image}
