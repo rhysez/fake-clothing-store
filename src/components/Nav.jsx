@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Nav() {
+function Nav(props) {
 
     return (
         <>
@@ -10,7 +10,7 @@ function Nav() {
                     <Link to='/' className='nav-button' key={1}>Home</Link>
                     <Link to='/shop' className='nav-button' key={2}>Shop</Link>
                 </ul>
-                <Link to='/cart' className='shopping-cart'>CART</Link>
+                <Link to='/cart' className='shopping-cart'>CART: {props.cartQuantity}</Link>
             </div>
         </>
     )

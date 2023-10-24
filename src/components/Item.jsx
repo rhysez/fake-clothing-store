@@ -3,37 +3,32 @@ function Item(props) {
     title: props.title,
     image: props.image,
     price: props.price,
+    quantity: null,
     inCart: false,
   };
 
   return (
-    <div
-      className="item"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <div className='item'>
       <img
         src={itemObject.image}
         alt={itemObject.title}
-        style={{ maxWidth: "15rem" }}
+        style={{ maxWidth: '15rem' }}
       />
-      <p
+      <p className='item-title'
         style={{
-          fontSize: "1vw",
-          fontWeight: "500",
-          textAlign: "center",
-          width: "50%",
+          fontSize: '1.5rem',
+          fontWeight: '500',
+          textAlign: 'center',
+          width: '50%',
         }}
       >
         {itemObject.title}
       </p>
-      <p style={{ fontSize: "1vw", fontWeight: "500", textAlign: "center" }}>
-        {itemObject.price}
-      </p>
+      <p className='item-price' style={{ fontSize: '1.5rem', fontWeight: '500', textAlign: 'center' }}>{itemObject.price}</p>
+      <div className='item-inputs'>
+        <input type="number" style={{width: '25%'}} />
+        <button type="submit" className='add-to-cart' onClick={props.addToCart}>Add to cart</button>
+      </div>
     </div>
   );
 }

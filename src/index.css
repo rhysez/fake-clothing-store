@@ -396,7 +396,6 @@ body {
 
 .item:hover {
   transform: scale(1.025);
-  box-shadow: 4px 4px 8px 0px rgb(166, 166, 166);
 }
 
 .hero-image {
@@ -417,10 +416,82 @@ body {
 
 /* Shop */ 
 
+.your-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.checkout {
+  margin-top: 10%;
+  color: var(--page-light);
+  background-color: var(--matching-gym-sets-shadow);
+  border-radius: 10px;
+  font-size: 1.5vw;
+  padding: 1rem;
+  cursor: pointer;
+  border: none;
+}
+
+.shop-items-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 15%;
+}
+
+.item-notification {
+  display: none;
+  background-color: var(--page-dark);
+  color: var(--page-light);
+  padding: 1.5rem;
+  position: fixed;
+  top: 10vh;
+  right: 5vw;
+  border-radius: 10px;
+  font-size: 1.5vw;
+  font-weight: 500;
+  transition: all ease-in-out 0.2s;
+  animation: fadeIn 0.25s;
+  z-index: 1;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.item-inputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.add-to-cart {
+  text-decoration: none;
+  background-color: var(--page-dark);
+  color: var(--page-light);
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: var(--footer-background);
+}
+
 @media (max-width: 1100px) {
   .shop-items-container {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
+  }
+  .item-notification {
+    font-size: 2.5vw;
   }
 }
 
@@ -429,4 +500,11 @@ body {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(8, 1fr);
   }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
