@@ -12,7 +12,7 @@ function App(props) {
       <Nav cartQuantity={props.cartQuantity} />
       <div className='hero-container'>
         <img
-          src='./public/hero.jpg'
+          src='/hero.jpg'
           alt='woman in sports clothing looking out into the distance'
           className='hero-image'
         />
@@ -45,17 +45,17 @@ function App(props) {
       <h2 className='categories-title'>Categories</h2>
       <div className='categories-container'>
         <Category
-          image='/public/woman-posing-2.jpg'
+          image='/woman-posing-2.jpg'
           alt='woman sat on floor wearing trainers and posing'
           text='Shoes'
         />
         <Category
-          image='/public/man-in-tshirt.jpg'
+          image='/man-in-tshirt.jpg'
           alt='man stood wearing purple t-shirt'
           text='T-Shirts'
         />
         <Category
-          image='/public/woman-on-phone.jpg'
+          image='/woman-on-phone.jpg'
           alt='woman wearing active-wear looking at her phone'
           text='Accessories'
         />
