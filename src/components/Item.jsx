@@ -3,6 +3,7 @@ function Item(props) {
     title: props.title,
     image: props.image,
     price: props.price,
+    quantity: props.quantity,
   };
 
   return (
@@ -24,8 +25,8 @@ function Item(props) {
       </p>
       <p className='item-price' style={{ fontSize: '1.5rem', fontWeight: '500', textAlign: 'center' }}>£{itemObject.price}</p>
       <div className='item-inputs'>
-        <input type="number" style={{width: '25%'}} />
-        <button type="submit" className='add-to-cart' id='add-to-cart' onClick={() => {props.addToCart()}}>Add to cart</button>
+        <input type="number" style={{width: '25%'}} id={props.selector}/>
+        {props.submit}
       </div>
     </div>
   );

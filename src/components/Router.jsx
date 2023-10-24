@@ -12,32 +12,37 @@ const Router = () => {
 
   function handleItemNotification(message) {
     const itemNotification = document.querySelector('.item-notification');
-    itemNotification.textContent = message
+    itemNotification.textContent = message;
     itemNotification.style.display = 'inline';
     setTimeout(() => {
       itemNotification.style.display = 'none';
     }, '2000');
   }
 
-  function handleAddToCart(item) {
-    event.preventDefault()
-    setItemsInCart([...itemsInCart, item]);  
-    handleItemNotification('Item added to cart')
-  }
-
-  function handleSubmitOrder(cart){
-    if (!cart.length) {
-      handleItemNotification('Cart is empty')
+  function handleAddToCart(item, quantity) {
+    event.preventDefault();
+    if (quantity == 0 || null || undefined){
+      handleItemNotification('Please enter a quantity')
       return
     }
-    setItemsInCart([])
-    handleItemNotification('Thanks for your order!')
+    item.quantity = quantity
+    setItemsInCart([...itemsInCart, item]);
+    handleItemNotification('Item added to cart');
+  }
+
+  function handleSubmitOrder(cart) {
+    if (!cart.length) {
+      handleItemNotification('Cart is empty');
+      return;
+    }
+    setItemsInCart([]);
+    handleItemNotification('Thanks for your order!');
   }
 
   function handleDeleteItem(e) {
-    const name = e.target.getAttribute('name')
-    setItemsInCart(itemsInCart.filter(item => item.title !== name));
-    handleItemNotification('Item removed from cart')
+    const name = e.target.getAttribute('name');
+    setItemsInCart(itemsInCart.filter((item) => item.title !== name));
+    handleItemNotification('Item removed from cart');
   }
 
   useEffect(() => {
@@ -85,9 +90,22 @@ const Router = () => {
                 image={item.image}
                 title={item.title}
                 price={item.price}
-                addToCart={() => {
-                  handleAddToCart({ image: item.image, title: item.title, price: item.price });
-                }}
+                selector={item.title}
+                submit={
+                  <button
+                    type='submit'
+                    className='add-to-cart'
+                    id='add-to-cart'
+                    onClick={() => {
+                      handleAddToCart(
+                        { image: item.image, title: item.title, price: item.price },
+                        document.getElementById(item.title).value
+                      );
+                    }}
+                  >
+                    Add to cart
+                  </button>
+                }
               />
             );
           })}
@@ -98,20 +116,38 @@ const Router = () => {
       path: '/cart',
       element: (
         <ShoppingCart
-          submitOrder={() => {handleSubmitOrder(itemsInCart)}}
+          submitOrder={() => {
+            handleSubmitOrder(itemsInCart);
+          }}
           cartItems={itemsInCart}
           cartQuantity={itemsInCart.length}
           cartList={itemsInCart.map((item, index) => {
             return (
               <>
-                <div className='cart-item' key={'cartItem' + index} >
-                <img
-                  style={{ width: '4vw' }}
-                  src={item.image}
-                  alt={item.title}
-                />
-                {item.title}
-                <button onClick={handleDeleteItem} name={item.title} className='add-to-cart'>Delete</button>
+                <div
+                  className='cart-item'
+                  key={'cartItem' + index}
+                >
+                  <div className='cart-item-section-1'>
+                  <img
+                    className='cart-item-image'
+                    src={item.image}
+                    alt={item.title}
+                  />
+                  {item.title}
+                  </div>
+                  <div className='cart-item-section-2'>
+                  <p className='cart-item-quantity'>
+                    <strong>Quantity: {item.quantity}</strong>
+                  </p>
+                  <button
+                    onClick={handleDeleteItem}
+                    name={item.title}
+                    className='add-to-cart'
+                  >
+                    Delete
+                  </button>
+                  </div>
                 </div>
               </>
             );
@@ -120,7 +156,6 @@ const Router = () => {
       ),
     },
   ]);
-
   return <RouterProvider router={router} />;
 };
 

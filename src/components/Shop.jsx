@@ -6,7 +6,7 @@ function Shop(props) {
   return (
     <>
       <Nav cartQuantity={props.cartQuantity} />
-      <h2 style={{ marginTop: '7.5%', marginBottom: '4.5%', textAlign: 'center', fontSize: '5rem', padding: '0' }}>
+      <h2 style={{ marginTop: '12%', marginBottom: '4.5%', textAlign: 'center', fontSize: '5rem', padding: '0' }}>
         SHOP
       </h2>
       <div className='item-notification'></div>

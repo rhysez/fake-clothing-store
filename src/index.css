@@ -503,11 +503,37 @@ input {
 
 .cart-item {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1rem;
   background-color: var(--matching-gym-sets-background);
   padding: 1rem;
   border-radius: 10px;
+}
+
+.cart-item-image {
+  width: 4vw;
+}
+
+.cart-item-section-1, .cart-item-section-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 700px) {
+  .item-notification {
+    font-size: 4vw;
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .cart-item-image {
+    width: 20vw;
+  }
+
+  .checkout {
+    font-size: 6vw;
+  }
 }
