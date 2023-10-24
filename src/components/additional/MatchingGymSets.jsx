@@ -8,7 +8,7 @@ function MatchingGymSets() {
                 <p className='matching-sets-subtitle'>Comfortable and fashionable gym <br /> wear sets for Men and Women.</p>
                 <Link to='/shop' className="matching-sets-shop">Shop</Link>
             </div>
-            <img src="/public/woman-posing.jpg" alt="woman in green gym set posing and smiling" className='matching-sets-image' />
+            <img src="/woman-posing.jpg" alt="woman in green gym set posing and smiling" className='matching-sets-image' />
         </div>
     )
 }
