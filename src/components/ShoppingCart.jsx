@@ -4,7 +4,7 @@ function ShoppingCart(props) {
   function sumAllItems() {
     if (!props.cartItems.length) return 0;
     const itemTotal = props.cartItems.reduce((accumulator, object) => {
-      return accumulator + object.price
+      return accumulator + (object.price * object.quantity);
     }, 0);
 
     return itemTotal;
