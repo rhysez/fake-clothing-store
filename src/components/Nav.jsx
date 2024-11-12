@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-function Nav(props) {
+// eslint-disable-next-line react/prop-types
+function Nav({cartQuantity}) {
 
     return (
         <>
@@ -10,7 +11,7 @@ function Nav(props) {
                     <Link to='/' className='nav-button' key={1}>Home</Link>
                     <Link to='/shop' className='nav-button' key={2}>Shop</Link>
                 </ul>
-                <Link to='/cart' className='shopping-cart'>CART: {props.cartQuantity}</Link>
+                <Link to='/cart' className='shopping-cart'>CART: {cartQuantity}</Link>
             </div>
         </>
     )

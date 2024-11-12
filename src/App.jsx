@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from './components/Nav';
 import Shoes from './components/additional/Shoes';
@@ -13,6 +12,7 @@ function App(props) {
       <div className='hero-container'>
         <img
           src='/hero.jpg'
+          fetchpriority="high"
           alt='woman in sports clothing looking out into the distance'
           className='hero-image'
         />
